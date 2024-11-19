@@ -1,44 +1,112 @@
 {
   "categoryList": [
     {
-      "id": 11,
-      "name": "Kotlin"
-    },
-    {
-      "id": 12,
-      "name": "SQL"
-    },
-    {
       "id": 13,
-      "name": "Go"
-    },
-    {
-      "id": 14,
       "name": "Rust"
     },
     {
-      "id": 15,
+      "id": 14,
       "name": "TypeScript"
     },
     {
-      "id": 16,
+      "id": 15,
       "name": "Perl"
     },
     {
-      "id": 17,
+      "id": 16,
       "name": "Scala"
     },
     {
-      "id": 18,
+      "id": 17,
       "name": "R"
     },
     {
-      "id": 19,
-      "name": "Dart"
+      "id": 52,
+      "name": "Objective-C"
     },
     {
-      "id": 20,
-      "name": "MATLAB"
+      "id": 53,
+      "name": "VB.NET"
+    },
+    {
+      "id": 54,
+      "name": "F#"
+    },
+    {
+      "id": 55,
+      "name": "Shell"
+    },
+    {
+      "id": 56,
+      "name": "Groovy"
+    },
+    {
+      "id": 57,
+      "name": "Assembly"
+    },
+    {
+      "id": 58,
+      "name": "HTML"
+    },
+    {
+      "id": 59,
+      "name": "CSS"
+    },
+    {
+      "id": 60,
+      "name": "JavaScript"
+    },
+    {
+      "id": 61,
+      "name": "Python"
+    },
+    {
+      "id": 62,
+      "name": "Java"
+    },
+    {
+      "id": 63,
+      "name": "C++"
+    },
+    {
+      "id": 64,
+      "name": "C#"
+    },
+    {
+      "id": 65,
+      "name": "Ruby"
+    },
+    {
+      "id": 66,
+      "name": "PHP"
+    },
+    {
+      "id": 67,
+      "name": "Swift"
+    },
+    {
+      "id": 68,
+      "name": "Kotlin"
+    },
+    {
+      "id": 69,
+      "name": "SQL"
+    },
+    {
+      "id": 70,
+      "name": "Go"
+    },
+    {
+      "id": 71,
+      "name": "Rust"
+    },
+    {
+      "id": 72,
+      "name": "TypeScript"
+    },
+    {
+      "id": 73,
+      "name": "Perl"
     }
   ]
 }

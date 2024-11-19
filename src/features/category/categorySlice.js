@@ -70,9 +70,7 @@ export const categorySlice = createSlice({
       state.isLoading = false;
       state.isError = false;
       state.categoryList = state.categoryList.filter((category)=>category.id !== action.payload)
-      // state.categoryList = state.categoryList.filter(
-      //   (item) => item.id !== action.payload
-      // );
+
     })
     builder.addCase(removeCategories.rejected, (state)=>{
       state.isLoading = false;

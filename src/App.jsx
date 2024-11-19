@@ -1,4 +1,5 @@
 import "./App.css";
+import Empty from "./components/Empty";
 import CreateCategory from "./pages/CreateCategory";
 const categoryList = [
     // {

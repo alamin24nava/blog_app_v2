@@ -11,29 +11,19 @@ const CreateCategory = () => {
     useEffect(()=>{
         dispatch(getCategories())
     },[])
-    const initCategory = {id:"", as:""}
-   
-    const [categoryName, setCategoryName] = useState(initCategory)
+    const [categoryName, setCategoryName] = useState("")
     const handleChange = (e)=>{
-        const {name, value} = e.target
-        // setCategoryName((prevState)=>({
-        //     ...prevState,
-        //     [name]:value,
-        //     id:crypto.randomUUID()
-        // }))
-        setCategoryName({[name]:value, id:crypto.randomUUID()})
+        setCategoryName(e.target.value);
     }
     // handle Submit
     const handleSubmit = (e)=>{
         e.preventDefault()
         if(categoryName == ""){return toast.error("Please Provide Category Name..")}
 
-        // const createCategory = {
-        //     name: categoryName
-        // }
-        // categoryList.push(createCategory)
-        // setCategoryName("")
-        console.log(categoryName);
+        const createCategory = {
+            name: categoryName
+        }
+        console.log(createCategory);
     }
     return (
         <div className="grid grid-cols-2 gap-4">
