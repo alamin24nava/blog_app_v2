@@ -4,12 +4,18 @@ import Input from "../components/Input";
 import Table from "../components/Table";
 import toast from "react-hot-toast";
 import { useDispatch, useSelector } from "react-redux";
-import{getCategories, categoriesGetuseSelector} from "../features/category/categorySlice"
+import{getCategories,postCategories, categoriesGetuseSelector} from "../features/category/categorySlice"
+import {getAuthors,authorsGetuseSelector} from "../features/author/authorSlice"
 const CreateCategory = () => {
     const dispatch = useDispatch()
     const { isLoading, categoryList} = useSelector(categoriesGetuseSelector)
+    const { authorList} = useSelector(authorsGetuseSelector)
+    // console.log(authorList);
     useEffect(()=>{
         dispatch(getCategories())
+    },[])
+    useEffect(()=>{
+        dispatch(getAuthors())
     },[])
     const [categoryName, setCategoryName] = useState("")
     const handleChange = (e)=>{
@@ -19,32 +25,32 @@ const CreateCategory = () => {
     const handleSubmit = (e)=>{
         e.preventDefault()
         if(categoryName == ""){return toast.error("Please Provide Category Name..")}
-
-        const createCategory = {
-            name: categoryName
-        }
-        console.log(createCategory);
+        let isIncludes = categoryList.find((ele)=>ele.name == categoryName)
+        if(isIncludes) return toast.error("This Category Already Added!")
+        const createCategory = {name: categoryName }
+        dispatch(postCategories(createCategory))
+        setCategoryName("")
     }
     return (
         <div className="grid grid-cols-2 gap-4">
             <div className="border p-4 rounded-md border-gray-700">
             <form className="flex gap-3" onSubmit={handleSubmit}>
-                <Input _onChange = {handleChange} name="categoryName" value={categoryName.as} type="text" placeholder="Type here" className="input-bordered w-full max-w-xs"/>
-                <Button className="btn-primary" type="submit" value="Add Category"/>                
-            </form>
+                <Input _onChange = {handleChange} name="categoryName" value={categoryName} type="text" placeholder="Type here" className="input-bordered w-full"/>
+                <Button className="btn-primary" type="submit" value="Add Category"/>   
+            </form>           
             </div>
             <div className="border p-4 rounded-md border-gray-700">
                 <Table isLoading={isLoading} dataList={categoryList} title="Category List"/>
             </div>
-        {/* <div className="border p-4 rounded-md border-gray-700">
+        <div className="border p-4 rounded-md border-gray-700">
             <div className="flex gap-3">
-            <Input />
-            <Button className="btn-primary" type="submit"/>
+            <Input _onChange = {handleChange} name="categoryName" value={categoryName} type="text" placeholder="Type here" className="input-bordered w-full"/>
+            <Button className="btn-primary" type="submit" value="Add Author"/>  
             </div>
         </div>
         <div className="border p-4 rounded-md border-gray-700">
-            <Table title="Author List" dataList = {categoryList}/>
-        </div> */}
+            <Table title="Author List" dataList = {authorList}/>
+        </div>
         </div>
     );
 };
