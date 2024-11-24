@@ -9,24 +9,25 @@
       "id": 2
     },
     {
-      "id": 3,
-      "name": "games"
+      "name": "alamin M",
+      "id": 3
+    },
+    {
+      "name": "asda",
+      "id": 4
+    },
+    {
+      "name": "asdas",
+      "id": 5
     }
   ],
   "authorList": [
     {
-      "name": "jibon kG",
-      "category_id": 2,
-      "id": 3
+      "name": "html",
+      "id": 2
     },
     {
-      "id": 4,
-      "name": "salim",
-      "category_id": 1
-    },
-    {
-      "name": "hm",
-      "category_id": 4,
+      "name": "css",
       "id": 5
     }
   ],
